@@ -1,0 +1,109 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import LinkedInIcon from "../components/icons/Linkedin.astro";
+import GithubIcon from "../components/icons/Github.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import SocialPill from "../components/SocialPill.astro";
+import Experience from "../components/Experience.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
+import CodeIcon from "../components/icons/Code.astro";
+import CredlyIcon from "../components/icons/Credly.astro";
+import Projects from "../components/Projects.astro";
+import Credentials from "../components/Credential.astro";
+---
+
+<Layout
+  title="Damian Flores's Portfolio - Frontend Developer."
+  description="Hire Damian Flores for Amazing Website Developments"
+>
+  <main class="px-4">
+    <SectionContainer class="py-36 pb-24">
+      <div class="flex gap-4 mb-4 mt-10">
+        <img
+          class="rounded-full size-20 mb-4"
+          src="/daka7.png"
+          alt="DamianFlores Photo"
+          style="background-color: rgb(9, 117, 219); padding: 2px;"
+        />
+        <a
+          href="https://www.linkedin.com/in/damian-flores-322322250/"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+        >
+          <Badge>Open to new challenges!</Badge></a
+        >
+      </div>
+      <h1
+        class="text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10 text-gray-800 dark:text-white"
+      >
+        Hey, I'm Damian.
+      </h1>
+      <h2
+        class="text-xl lg:text-xl text-wrap max-w-[700px] dark:text-gray-300 text-gray-900"
+      >
+        <span class="opacity-80 font-medium">
+          Frontend developer with basic knowledge in backend development. Very
+          Self-taught and always eager to learn new things and perfect what I
+          know. Lover of running, world history and Chinese food.</span
+        >
+        <span
+          class="dark:text-red-400/90 font-bold dark:font-medium text-red-900/95"
+          >From Venezuela 🇻🇪</span
+        >
+        <span
+          class="dark:text-blue-300/100 text-blue-700/90 pr-2 font-bold dark:font-medium"
+        >
+          to Montevideo, Uruguay 🇺🇾.</span
+        >
+      </h2>
+
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill href="https://www.linkedin.com/in/damian-flores-322322250/">
+          <LinkedInIcon class="size-4 md:size-6" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/SoyDamianFlores">
+          <GithubIcon class="size-4 md:size-6" />
+          Github
+        </SocialPill>
+        <SocialPill href="mailto:yoman.damian@gmail.com">
+          <MailIcon class="size-4 md:size-6 hover:bg-black" />
+          Contact me
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id="experience">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white"
+      >
+        <Briefcase class="size-7" />
+        Work Experience
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="projects">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white"
+      >
+        <CodeIcon class="size-7" />
+        Personal Projects
+      </h2>
+      <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="credentials">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white"
+      >
+        <CredlyIcon class="size-7" />
+        Credentials / Badges
+      </h2>
+      <Credentials />
+    </SectionContainer>
+  </main>
+</Layout>

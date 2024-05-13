@@ -1,0 +1,50 @@
+---
+import ThemeToggle from "./Theme.astro";
+
+const navItems = [
+  {
+    title: "About",
+    label: "about-me",
+    url: "/#top",
+  },
+  {
+    title: "Experience",
+    label: "experience",
+    url: "/#experience",
+  },
+  {
+    title: "Projects",
+    label: "projects",
+    url: "/#projects",
+  },
+  {
+    title: "Skills",
+    label: "skills",
+    url: "/#skills",
+  },
+  {
+    title: "Contact",
+    label: "contact",
+    url: "mailto:yoman.damian@gmail.com",
+  },
+];
+---
+
+<header class="fixed top-0 z-10 flex items-center justify-center w-full mt-2">
+  <nav
+    class="flex justify-center px-3 dark:bg-slate-400 shadow-2xl bg-slate-300 text-sm font-medium rounded-full text-gray-700 dark:text-gray-200 items-center"
+  >
+    {
+      navItems.map((link) => (
+        <a
+          class="relative block px-2 py-2 transition hover:text-black hover:scale-110 dark:hover:text-black"
+          aria-label={link.label}
+          href={link.url}
+        >
+          {link.title}
+        </a>
+      ))
+    }
+    <ThemeToggle />
+  </nav>
+</header>

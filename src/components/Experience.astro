@@ -1,0 +1,30 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    date: "October 2020 - Present",
+    title: "Administrative Assistant in Human Resources",
+    description:
+      "Updating and managing data in software Assist Control. Employee support, Management of complaints and claims, Contribution to the continuous improvement of company processes.",
+    link: "https://seguridadiferente.com.uy/",
+  },
+  {
+    date: "June 2016 - January 2020",
+    title: "Telematic Agent",
+    description:
+      "Tracking and monitoring of mobile phones immersed in an investigation.",
+    link: "https://es.wikipedia.org/wiki/Cuerpo_de_Investigaciones_Cient%C3%ADficas,_Penales_y_Criminal%C3%ADsticas",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-8  ms-4">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

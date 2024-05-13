@@ -1,0 +1,118 @@
+---
+import DjangoIcon from "./icons/Django.astro";
+import PythonIcon from "./icons/Python.astro";
+import HTMLIcon from "./icons/Html.astro";
+import JAVASCRIPT from "./icons/Javascript.astro";
+import REACTICON from "./icons/React.astro";
+import LinkButton from "./LinkButton.astro";
+import GitHub from "./icons/Github.astro";
+
+const TAGS = {
+  DJANGO: {
+    name: "Django",
+    class: "bg-gray-700 text-white",
+    icon: DjangoIcon,
+  },
+  PYTHON: {
+    name: "Python",
+    class: "bg-gray-700 text-white",
+    icon: PythonIcon,
+  },
+  HTML: {
+    name: "HTML",
+    class: "bg-gray-700 text-white",
+    icon: HTMLIcon,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-gray-700 text-white",
+    icon: JAVASCRIPT,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-gray-700 text-white",
+    icon: REACTICON,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "WalletChoN",
+    description:
+      "WalletChoN is an innovative application designed to simplify the management and control of your personal income, savings, debts and expenses.",
+    github: "https://github.com/SoyDamianFlores/WalletChoN",
+    image: "/projects/walletofi.png",
+    tags: [TAGS.PYTHON, TAGS.DJANGO, TAGS.HTML],
+  },
+  {
+    title: "Pawsbook",
+    description:
+      "Pawsbook is an in-progress social networking platform designed to connect pet owners and their furry friends in Montevideo.",
+    github: "https://github.com/SoyDamianFlores/Pawsbook",
+    image: "/projects/newpaws.jpg",
+    tags: [TAGS.JAVASCRIPT, TAGS.REACT],
+  },
+  {
+    title: "ChatGPT in Visual Studio Code Terminal",
+    description:
+      "This application, developed with the assistance of the influencer programmer MoureDev, allows you to interact with OpenAI's GPT Chat Bot gpt-3.5-turbo and text-davinci-003 through the Visual Studio Code terminal.",
+    github: "https://github.com/SoyDamianFlores/App-Python-ChatGPT",
+    image: "/projects/newop.jpg",
+    tags: [TAGS.PYTHON],
+  },
+];
+---
+
+<div class="flex flex-col gap-y-8">
+  {
+    PROJECTS.map(({ title, image, description, tags, github }) => (
+      <>
+        <div class="lol lg:text-left text-center mt-5">
+          <h3 class="text-2xl font-bold w-full  text-black dark:text-white tracking-widest">
+            {title}
+          </h3>
+        </div>
+        <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+          <div class="w-full md:w-1/2">
+            <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+              <img
+                alt=""
+                class="mx-auto md:mb-0 lg:w-full h-15 rounded shadow-2xl shadow-white/20"
+                src={image}
+              />
+            </div>
+          </div>
+
+          <div class="w-full md:w-1/2 md:max-w-lg">
+            <div class="flex flex-wrap mt-2">
+              <ul class="flex flex-row mb-2 gap-x-2">
+                {tags.map((tag) => (
+                  <li>
+                    <span
+                      class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                    >
+                      <tag.icon class="size-4" />
+                      {tag.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="mt-2 mb-8 lg:mb-0 text-black dark:text-gray-200">
+                {description}
+              </div>
+              <footer class="flex items-end md:justify-start lg:justify-start w-full justify-center mt-4 gap-x-4">
+                {github && (
+                  <LinkButton href={github} target="_blank">
+                    <GitHub class="size-6" />
+                    Code
+                  </LinkButton>
+                )}
+              </footer>
+            </div>
+          </div>
+        </article>
+      </>
+    ))
+  }
+</div>
